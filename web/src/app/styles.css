@@ -1,0 +1,106 @@
+@import '@astryxdesign/core/reset.css';
+@import '@astryxdesign/core/astryx.css';
+
+/* The server Content-Security-Policy blocks third-party font hosts, so use the system stack instead of Figtree. */
+body {
+  margin: 0;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-body), sans-serif;
+}
+
+[data-astryx-theme] {
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.page-content {
+  max-width: 1120px;
+  width: 100%;
+  margin-inline: auto;
+  padding: var(--spacing-8) var(--spacing-6);
+}
+
+section[id] { scroll-margin-block-start: var(--spacing-6); }
+
+@media (max-width: 720px) {
+  .page-content { padding: var(--spacing-6) var(--spacing-4); }
+}
+
+.decide-page { max-width: 560px; width: 100%; margin-inline: auto; }
+.decide-swipe { position: relative; touch-action: pan-y; user-select: none; will-change: transform; }
+.decide-swipe [data-noswipe] { user-select: text; }
+@media (prefers-reduced-motion: reduce) { .decide-swipe { transition: none !important; } }
+
+.decide-stamp { position: absolute; top: calc(-1 * var(--spacing-3)); z-index: 1; opacity: 0; pointer-events: none; max-width: 70%; }
+/* The card moves with the finger, so the stamp stays on the corner that remains on screen. */
+.decide-stamp-left { right: var(--spacing-3); }
+.decide-stamp-right { left: var(--spacing-3); }
+.decide-enter { animation: decide-enter 0.24s ease; }
+@keyframes decide-enter { from { opacity: 0; transform: translateY(14px) scale(0.97); } }
+@media (prefers-reduced-motion: reduce) { .decide-enter { animation: none; } }
+.animated-icon { display: inline-flex; line-height: 0; }
+.animated-icon > div { display: inline-flex; }
+.decide-row-icon { display: inline-flex; align-items: center; height: 1.45em; flex: none; }
+
+/* Details: keep a tappable height, separate the opened body from the title, and align list indent with the card. */
+.decide-details { min-width: 0; overflow-wrap: anywhere; }
+.decide-details table { width: 100%; table-layout: fixed; }
+.decide-details :is(th, td) { overflow-wrap: anywhere; }
+.decide-details :is(th, td):first-child { width: 5.5em; }
+.decide-details :is(h1, h2, h3, h4, h5, h6) { font-size: 0.875rem; }
+
+/* Stack the next card behind this one so it shows as this card moves. Clip the back card to this card's height. */
+.decide-stack { position: relative; }
+.decide-front { position: relative; z-index: 1; }
+.decide-back {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  transform: translateY(var(--spacing-3)) scale(0.96); transform-origin: top center;
+  border-radius: var(--radius-container);
+}
+.decide-page h2 { text-wrap: balance; word-break: auto-phrase; }
+
+/* Diagram (canvas). Same colors as the excalidraw-desk diagrams. Logo tiles stay white in dark mode. */
+.cv { display: block; height: auto; margin-inline: auto; max-width: 100%; }
+.cv-group-neutral { fill: light-dark(#f5f7fa, #2a2d31); stroke: light-dark(#ced4da, #3f444a); }
+.cv-group-warm { fill: light-dark(#fef8f1, #33271f); stroke: #e8590c; }
+.cv-group-label { font-size: 14px; }
+.cv-group-label-neutral { fill: light-dark(#343a40, #ced4da); }
+.cv-group-label-warm { fill: light-dark(#d9480f, #ff8a4c); }
+.cv-tile { fill: #ffffff; stroke: #ced4da; }
+.cv-name { font-size: 17px; fill: light-dark(#1e1e1e, #f1f3f5); }
+.cv-role { font-size: 12px; font-family: ui-monospace, monospace; fill: light-dark(#6c757d, #adb5bd); }
+.cv-edge { stroke-width: 1.5; fill: none; }
+.cv-dashed { stroke-dasharray: 6 4; }
+.cv-label { font-size: 12px; }
+.cv-main { stroke: light-dark(#1971c2, #4dabf7); }
+.cv-sub { stroke: light-dark(#495057, #adb5bd); }
+.cv-fail { stroke: #e03131; }
+.cv-main-fill, .cv-main-text { fill: light-dark(#1971c2, #4dabf7); }
+.cv-sub-fill, .cv-sub-text { fill: light-dark(#495057, #adb5bd); }
+.cv-fail-fill, .cv-fail-text { fill: #e03131; }
+
+/* Give the answer area a border so it stays distinct from the card in dark mode. */
+.decide-answer { border: 1px solid var(--color-border); border-radius: var(--radius-container); }
+/* Cap the in-card diagram width so a wide screen does not make it too tall. */
+.cv-sheet { padding-block: var(--spacing-2); }
+.cv-sheet .cv { max-width: min(100%, 480px); }
+/* Sheet title row. It stays at the top while the body scrolls, and paints the surface so content does not show through. */
+.decide-sheet-header {
+  position: sticky; top: 0; z-index: 1;
+  padding-block-end: var(--spacing-2);
+  background: var(--color-background-surface);
+}
+/* Diagram and Details sit to the right of the links, and stay right-aligned when they wrap. */
+.decide-panel-buttons { margin-inline-start: auto; }
+.decide-composer {
+  width: 100%;
+  min-height: 2.5rem;
+  resize: vertical;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}

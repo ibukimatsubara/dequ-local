@@ -1,0 +1,31 @@
+name: Bug report
+description: Report behavior that differs from what you expected
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report security vulnerabilities privately as described in SECURITY.md, not here.
+        The maintainer reviews new issues and marks the ones to work on as `accepted`.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and logs
+      description: DeQu version or commit, OS, the agent you connected, and related logs or screenshots

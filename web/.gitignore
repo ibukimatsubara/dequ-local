@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+src/themes/mivki/mivki.css
+src/themes/mivki/mivki.js
+src/themes/mivki/mivki.d.ts
+src/themes/mivki/mivki.css.d.ts
+src/themes/mivki/mivki.variants.d.ts

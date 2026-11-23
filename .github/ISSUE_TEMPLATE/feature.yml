@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest a new feature or an improvement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: The maintainer reviews new issues and marks the ones to work on as `accepted`.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or goal
+      description: What you want to achieve, and what gets in the way today
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The behavior you have in mind, and alternatives you considered
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: How we can tell the problem is solved

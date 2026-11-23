@@ -1,0 +1,64 @@
+DeQu Source-Available License
+
+Licensor: MIBUKI
+Copyright (c) 2026 MIBUKI
+Licensed Work: DeQu 0.1.0
+Change Date: 2030-11-23
+Change License: Apache License, Version 2.0
+
+Scope
+
+These terms cover the Licensed Work in source and binary form, including
+copies, modifications, forks and derivative works (the "Covered Software").
+Separate licenses for material licensed by its copyright holders under other
+terms continue to apply.
+
+Permissions Before the Change Date
+
+MIBUKI grants you a worldwide, nonexclusive, royalty-free license to use, copy,
+modify, create derivative works of and redistribute the Covered Software,
+subject to the conditions below. You may use it for your work, for internal use
+in your organization and as a tool to build products or services you sell,
+provided you comply with those conditions.
+
+Conditions
+
+1. You may not sell the Covered Software, redistribute it for payment, or
+   include it in a product or service that is sold or offered for payment.
+   This condition applies to redistribution of source and binary copies,
+   whether or not you run the Covered Software.
+
+2. You may not offer the Covered Software to a third party as a hosted or
+   managed service, whether or not you charge for it. This includes running
+   it on behalf of a third party or giving a third party access to its
+   functionality as a service. For this condition, third parties exclude you
+   and people in your own organization when you run the Covered Software for
+   that organization's internal use.
+
+3. When you redistribute the Covered Software, include these license terms
+   with each copy and retain the existing copyright and license notices.
+
+Your rights under the grant above end if you violate these terms. These terms
+grant no rights to use MIBUKI's trademarks.
+
+Change License
+
+On the fourth anniversary of the date MIBUKI first publicly releases a version
+of the Licensed Work under these terms, MIBUKI irrevocably grants you a license
+to that version under the Apache License, Version 2.0.
+https://www.apache.org/licenses/LICENSE-2.0
+
+From that date, you may exercise the rights granted by the Apache License for
+that version without the conditions above. The change applies separately to
+each version MIBUKI releases. A fork or later redistribution does not reset the
+date. Changes made by others remain subject to the terms set by their copyright
+holders.
+
+Disclaimer
+
+To the extent permitted by law, the Covered Software is provided as is, without
+warranties of any kind, express or implied. MIBUKI is not liable for damages
+arising from the Covered Software or its use under these terms.
+
+For separate licensing arrangements, contact MIBUKI at
+https://github.com/ibukimatsubara.
